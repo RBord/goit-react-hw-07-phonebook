@@ -1,7 +1,7 @@
 import React from 'react';
 import shortid from 'shortid';
 import { connect } from 'react-redux';
-import { addContact } from '../../Redux/Phonebook/phonebook-actions';
+import contactsOperations from '../../Redux/Phonebook/phonebook-operations';
 
 import s from '../ContactForm/ContactForm.module.css'
 
@@ -76,7 +76,7 @@ const mapStateToProps = ({phonebook:{contacts}}) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    onSubmit: data => dispatch(addContact(data)),
+    onSubmit: data => dispatch(contactsOperations.addContact(data)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

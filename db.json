@@ -1,0 +1,14 @@
+{
+  "contacts": [
+    {
+      "name": "Rostyslav Bordyuh",
+      "number": "+380674681978",
+      "id": 1
+    },
+    {
+      "name": "Wonder Woman",
+      "number": "+380664567832",
+      "id": 2
+    }
+  ]
+}
