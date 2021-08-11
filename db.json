@@ -6,9 +6,14 @@
       "id": 1
     },
     {
-      "name": "Wonder Woman",
-      "number": "+380664567832",
+      "name": "Superman",
+      "number": "46575844",
       "id": 2
+    },
+    {
+      "name": "Batman",
+      "number": "35892372",
+      "id": 3
     }
   ]
 }

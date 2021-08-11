@@ -1,16 +1,16 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://localhost:4040';
 
-const fetchContacts = () => {
-  return axios.get('/contacts').then(response => response.data);
+const APIfetchContacts = () => {
+  return axios.get('/contacts');
 };
 
-const addContact = todo => {
-  return axios.post('/contacts', todo).then(({ data }) => data);
+const APIaddContact = todo => {
+  return axios.post('/contacts', todo);
 };
 
-const deleteContact = todoId => {
+const APIdeleteContact = todoId => {
   return axios.delete(`/contacts/${todoId}`);
 };
 
-export { fetchContacts, addContact, deleteContact };
+export { APIfetchContacts, APIaddContact, APIdeleteContact };
