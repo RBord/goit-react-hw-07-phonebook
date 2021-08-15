@@ -1,12 +1,5 @@
 import { APIdeleteContact, APIfetchContacts, APIaddContact } from '../../Services/contacts-api';
-import {
-    deleteContactRequest,
-    deleteContactSuccess,
-    deleteContactError,
-} from './phonebook-actions';
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
 
 export const fetchContacts = createAsyncThunk(
     'contacts/fetchContacts',
@@ -33,23 +26,15 @@ export const addContact = createAsyncThunk(
     }
 );
 
-// export const deleteContact = createAsyncThunk(
-//     'contacts/deleteContact',
-//     async (contactId, {rejectWithValue}) => {
-//         try {
-//             await APIdeleteContact(contactId);
-//         } catch (error) {
-//             return rejectWithValue(error);
-//         }
-//     }
-// )
-
-export const deleteContact = contactId => async dispatch => {
-    dispatch(deleteContactRequest());
-    try {
-        await APIdeleteContact(contactId);
-        dispatch(deleteContactSuccess(contactId));
-    } catch (error) {
-        dispatch(deleteContactError(error))
+export const deleteContact = createAsyncThunk(
+    'contacts/deleteContact',
+    async (contactId, { rejectWithValue }) => {
+        try {
+            await APIdeleteContact(contactId);
+            return contactId;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
     }
-}
+);
+
