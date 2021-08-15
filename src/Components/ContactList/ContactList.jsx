@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { contactsOperations, contactsSelectors } from '../../Redux/Phonebook';
+import { contactsSelectors } from '../../Redux/Phonebook';
+import { deleteContact, fetchContacts } from '../../Redux/Phonebook/phonebook-operations';
 import s from '../ContactList/ContactList.module.css';
 
 class ContactList extends Component {
@@ -30,8 +31,8 @@ const mapStateToProps = state => ({
     contacts: contactsSelectors.getContacts(state),
 })
 const mapDispatchToProps = dispatch => ({
-    onDeleteContact: (id) => dispatch(contactsOperations.deleteContact(id)),
-    fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
+    onDeleteContact: (id) => dispatch(deleteContact(id)),
+    fetchContacts: () => dispatch(fetchContacts()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactList);

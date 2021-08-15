@@ -5,12 +5,12 @@ const APIfetchContacts = () => {
   return axios.get('/contacts');
 };
 
-const APIaddContact = todo => {
-  return axios.post('/contacts', todo);
+const APIaddContact = contact => {
+  return axios.post('/contacts', contact);
 };
 
-const APIdeleteContact = todoId => {
-  return axios.delete(`/contacts/${todoId}`);
+const APIdeleteContact = contactId => {
+  return axios.delete(`/contacts/${contactId}`);
 };
 
 export { APIfetchContacts, APIaddContact, APIdeleteContact };
