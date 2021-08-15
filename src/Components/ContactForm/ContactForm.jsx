@@ -1,8 +1,7 @@
 import React from 'react';
 import shortid from 'shortid';
 import { connect } from 'react-redux';
-import contactsOperations from '../../Redux/Phonebook/phonebook-operations';
-
+import { contactsOperations, contactsSelectors } from '../../Redux/Phonebook';
 import s from '../ContactForm/ContactForm.module.css'
 
 class ContactForm extends React.Component {
@@ -71,8 +70,8 @@ class ContactForm extends React.Component {
         );
     }
 }
-const mapStateToProps = ({phonebook:{contacts}}) => ({
-    value: contacts,
+const mapStateToProps = state => ({
+    value: contactsSelectors.getContacts(state),
 })
 
 const mapDispatchToProps = dispatch => ({
