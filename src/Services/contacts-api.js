@@ -13,4 +13,4 @@ const APIdeleteContact = contactId => {
   return axios.delete(`/contacts/${contactId}`);
 };
 
-export { APIfetchContacts, APIaddContact, APIdeleteContact };
+export {APIfetchContacts, APIaddContact, APIdeleteContact };

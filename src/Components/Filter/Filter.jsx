@@ -1,24 +1,23 @@
 import React from 'react';
 import shortid from 'shortid';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { contactsSelectors, changeFilter } from '../../Redux/Phonebook';
 
 import s from '../Filter/Filter.module.css';
 
 const nameInputId = shortid.generate();
 
-const Filter = ({value, onChange }) => (
-    <label htmlFor={nameInputId}>
-        Find contacts by Name
-        <input type="text" value={value} onChange={onChange} id={nameInputId} className={s.input}/>
-    </label>
-)
+function Filter () {
 
-const mapStateToProps = state => ({
-    value: contactsSelectors.getFilter(state),
-});
-const mapDispatchToProps = dispatch => ({
-    onChange: (evt) => dispatch(changeFilter(evt.target.value)),
-});
+    const value = useSelector(state => contactsSelectors.getFilter(state));
+    const dispatch = useDispatch();
 
-export default connect(mapStateToProps,mapDispatchToProps)(Filter);
+    return (
+        <label htmlFor={nameInputId}>
+            Find contacts by Name
+            <input type="text" value={value} onChange={(evt) => dispatch(changeFilter(evt.target.value))} id={nameInputId} className={s.input}/>
+        </label>
+    )
+}
+
+export default Filter;
