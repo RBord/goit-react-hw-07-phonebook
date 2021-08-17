@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-06-phonebook",
+  "name": "goit-react-hw-07-phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,8 +25,7 @@
     "deploy": "netlify deploy -p",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install",
-    "server": "json-server --delay 300 --port 4040 --watch db.json "
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -64,12 +63,12 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RBord/goit-react-hw-06-phonebook.git"
+    "url": "git+https://github.com/RBord/goit-react-hw-07-phonebook.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RBord/goit-react-hw-06-phonebook/issues"
+    "url": "https://github.com/RBord/goit-react-hw-07-phonebook/issues"
   }
 }
